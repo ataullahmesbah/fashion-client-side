@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import Container from "../../../Shared/Container";
 
 
 const Banner = () => {
@@ -13,7 +14,7 @@ const Banner = () => {
 
     return (
 
-        <div className="relative h-[950px]   bg-gradient-to-b from-blue-900 via-blue-800">
+        <div className="relative  lg:h-[950px] w-full min-h-screen max-w-full  bg-gradient-to-b from-blue-900 via-blue-800">
             {/* Banner Image Background */}
             <div
                 className="absolute inset-0 bg-cover bg-center  lg:pt-20 h-full"
@@ -33,10 +34,11 @@ const Banner = () => {
 
             {/* Content */}
 
-            <div className="absolute inset-0 flex flex-col z-10 space-y-3 lg:space-y-28 ">
-                <div className="flex flex-col space-y-8 sm:flex-row sm:space-x-16 sm:items-start sm:justify-start lg:mt-1 lg:space-x-48 mt-40 mx-36 sm:mt-28 opacity-90">
+            <Container>
+            <div className="absolute inset-0 flex flex-col z-10 space-y-5 lg:space-y-28">
+                <div className="flex flex-col space-y-8 sm:flex-row sm:space-x-16 sm:items-start sm:justify-start md:mt-32 mt-20 lg:mt-14 lg:mx-28 mx-2 sm:mt-28  opacity-90">
                     <div className="sm:text-left lg:px-36 px-3 lg:mt-48">
-                        <h6 data-aos="fade-right" data-aos-duration="2000" className="text-3xl sm:text-5xl md:text-7xl md:px-10 lg:font-extrabold text-gray-300 py-4 font-serif lg:mb-5">Make people fall in love with <br /> your clothes.</h6>
+                        <h6 data-aos="fade-right" data-aos-duration="2000" className="text-3xl sm:text-5xl lg:text-4xl xl:text-6xl md:px-10 font-semibold xl:font-extrabold text-gray-300 py-4 font-serif">Make people fall in love with <br /> your clothes.</h6>
                         <p data-aos="fade-left" data-aos-duration="3000" className="uppercase font-mono md:px-10 text-white py-4">Embrace style and grace with our exquisite collection of clothing. Discover the perfect blend of fashion <br /> and comfort that will make hearts swoon. Elevate your wardrobe with our curated selections, designed to <br /> captivate and inspire. Unleash your unique charm <br /> and confidence through our timeless fashion pieces.</p>
                         <p data-aos="fade-right" data-aos-duration="2000" className="text-3xl sm:text-5xl md:px-10 text-white py-4 font-mono">New Fashion Collection</p>
                         <div data-aos="fade-left" data-aos-duration="2000" className="">
@@ -48,6 +50,7 @@ const Banner = () => {
 
 
             </div>
+            </Container>
 
         </div>
     );
