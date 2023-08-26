@@ -5,6 +5,7 @@ import banner from '../../../images/banner/img1.jpg';
 
 const Banner = () => {
     return (
+        
         <div className="relative h-[880px]  overflow-hidden bg-gradient-to-b from-blue-900 via-blue-800">
             {/* Banner Image Background */}
             <div
