@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
 
@@ -24,7 +30,9 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="navbar fixed z-10 justify-between px-20 bg-opacity-30 bg-black text-white font-bold">
+
+    <nav className="navbar fixed top-0 z-10 justify-between px-20 bg-opacity-30 bg-black text-white font-bold">
+    {/* // <nav className="navbar fixed top-0 z-10 justify-between px-20 bg-opacity-30 bg-black text-white font-bold"> */}
       <div className="lg:flex  px-10 md:px-10">
         {/* Left side */}
         <div className="flex items-center py-4 md:py-6">
