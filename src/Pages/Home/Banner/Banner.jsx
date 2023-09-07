@@ -40,19 +40,20 @@ const Banner = () => {
                             <h6 data-aos="fade-right" data-aos-duration="2000" className="text-3xl sm:text-5xl lg:text-4xl xl:text-6xl md:px-10 font-semibold xl:font-extrabold text-gray-300 py-4 font-serif">Make people fall in love with <br /> your clothes.</h6>
                             <p data-aos="fade-left" data-aos-duration="3000" className="uppercase font-mono md:px-10 text-white py-4">Embrace style and grace with our exquisite collection of clothing. Discover the perfect blend of fashion <br /> and comfort that will make hearts swoon. Elevate your wardrobe with our curated selections, designed to <br /> captivate and inspire. Unleash your unique charm <br /> and confidence through our timeless fashion pieces.</p>
                             <p data-aos="fade-right" data-aos-duration="2000" className="text-3xl sm:text-5xl md:px-10 text-white py-4 font-mono">New Fashion Collection</p>
-<<<<<<< HEAD
-                            <div data-aos="fade-left" data-aos-duration="2000" className="">
-=======
-                            <div data-aos="fade-up"
-                                data-aos-duration="3000" className="">
->>>>>>> b6f21d4224352b602ead17922397e3a530dafb33
-                                <button className="btn btn-sm mx-10 mt-5 btn-secondary font-mono text-white font-semibold">Meet Tr-Fashion</button>
 
+                            <div data-aos="fade-left" data-aos-duration="2000" className="">
+
+                                <div data-aos="fade-up"
+                                    data-aos-duration="3000" className="">
+
+                                    <button className="btn btn-sm mx-10 mt-5 btn-secondary font-mono text-white font-semibold">Meet Tr-Fashion</button>
+
+                                </div>
                             </div>
                         </div>
+
+
                     </div>
-
-
                 </div>
             </Container>
 
