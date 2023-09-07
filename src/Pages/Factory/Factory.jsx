@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
-
-import {  FaChevronRight } from 'react-icons/fa';
+import { FaChevronRight } from 'react-icons/fa';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Container from '../../Shared/Container';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Factory = () => {
   const [selectedPoint, setSelectedPoint] = useState(1);
@@ -18,71 +20,139 @@ const Factory = () => {
       .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
-
-    <div className="bg-gray-300 p-20">
+    <div className="bg-gradient-to-r from-gray-800 to-purple-900 lg:p-20">
       <Container>
+        <div className="mb-10 space-y-5">
+          <h2
+            data-aos="zoom-in"
+            data-aos-duration="3000"
+            className="text-lime-400 font-bold text-xl "
+          >
+            Produces
+          </h2>
+          <h4
+            data-aos="fade-right"
+            data-aos-duration="3000"
+            className="text-white font-bold text-4xl "
+          >
+            Every Essential Tool Prepared <br />{' '}
+            <span className="text-lime-400 font-bold text-4xl">
+              ready for production
+            </span>
+          </h4>
+          <p className="text-white">
+            Build with Remarkable Speed, All While Maintaining Complete
+            Flexibility and Control.
+          </p>
+        </div>
+
+        {/* Conditionally render Carousel on mobile devices */}
+        <div className="lg:hidden items-center justify-center">
+  <Carousel
+    autoPlay
+    infiniteLoop
+    showArrows={false}
+    showStatus={false}
+    showThumbs={false}
+    emulateTouch
+  >
+    {pointsData.map((point) => (
+      <div key={point._id}>
+        {/* Content for each slide */}
+        <div
+          className={`p-3 px-5 cursor-pointer border-orange-500 hover:bg-gray-200 rounded-xl ${selectedPoint === point._id
+            ? 'border-x-8 border-blue-400 bg-white'
+            : 'hover:bg-white border-blue-200'
+          }`}
+          onClick={() => setSelectedPoint(point._id)}
+        >
+          <div className="space-y-2 shadow-xl shadow-violet-800 text-lg font-sans border-gray-400 bg-gray-200 p-3 px-4 py-4 rounded-2xl">
+            <h2 className="font-bold text-gray-800">{point.title}</h2>
+            <p className="text-gray-700">{point.description}</p>
+            <p className="flex items-center gap-2 text-blue-800 font-bold text-xs">
+              Learn More <FaChevronRight className="text-xs" />
+            </p>
+          </div>
+        </div>
+
+        {/* Right side */}
+        <div className="w-full h-1/2 p-4">
+          {/* Move this outside of the Carousel */}
+          {selectedPoint === point._id && (
+            <div>
+              <img
+                src={point.image}
+                alt={`Point ${point.title}`}
+                className="w-1/2 lg:mx-8 h-auto items-center border-1 rounded-xl"
+              />
+              <a href={point.learnMoreLink} className="text-blue-600"></a>
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </Carousel>
+</div>
 
 
-        <div className="flex">
+
+
+        {/* Content for larger screens */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 items-center justify-center">
           {/* Left side */}
 
-          <div className="space-y-3 mb-6">
-            <h2 className='text-blue-700 font-bold text-xl '>Produces</h2>
-            <h4 className='text-gray-500 font-bold text-4xl '>Every Essential Tool Prepared <br /> <span className='text-blue-600 font-bold text-4xl'>ready for production</span></h4>
-            <p>Build with Remarkable Speed, All While Maintaining Complete Flexibility and Control.</p>
-
-            <div className="w-full  p-4 space-y-2">
+          <div className="space-y-3 mb-6 md:w-auto lg:w-full xl:w-full sm:block hidden">
+            {/* Your content */}
+            <div
+              data-aos="zoom-in"
+              data-aos-duration="3000"
+              className="w-full space-y-2 md:w-auto"
+            >
               {pointsData.map((point) => (
                 <div
                   key={point._id}
-                  className={`p-3 px-5 cursor-pointer hover:border-2 border-blue-200 hover:bg-gray-200 rounded-xl ${selectedPoint === point._id
-                    ? 'border-x-2 border-blue-400 bg-white'
+                  className={`p-3 px-5 cursor-pointer border-orange-500 hover:bg-gray-200 rounded-xl ${selectedPoint === point._id
+                    ? 'border-x-8 border-blue-400 bg-white'
                     : 'hover:bg-white border-blue-200'
                     }`}
                   onClick={() => setSelectedPoint(point._id)}
                 >
-
-
-
-                  <div className="space-y-2 py-2 text-lg font-sans">
+                  <div className="space-y-2 shadow-xl shadow-violet-800 text-lg font-sans border-gray-400 bg-gray-200 p-3 px-4 py-4 rounded-2xl">
                     <h2 className="font-bold text-gray-800">{point.title}</h2>
                     <p className="text-gray-700">{point.description}</p>
                     <p className="flex items-center gap-2 text-blue-800 font-bold text-xs">
                       Learn More <FaChevronRight className="text-xs" />
                     </p>
                   </div>
-
-
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right side */}
-          <div className="w-1/2 p-4">
+          <div className="w p-4 sm:block hidden">
             {pointsData.map((point) =>
               selectedPoint === point._id && (
                 <div key={point._id}>
                   <img
                     src={point.image}
                     alt={`Point ${point.title}`}
-                    className="w-full mx-8 h-[780px] border-1 rounded-xl"
+                    className="w-full lg:mx-8 h-auto items-center border-1 rounded-xl"
                   />
 
-                  <a href={point.learnMoreLink} className="text-blue-600">
-
-                  </a>
+                  <a href={point.learnMoreLink} className="text-blue-600"></a>
                 </div>
               )
             )}
           </div>
         </div>
       </Container>
-
     </div>
-
   );
 };
 

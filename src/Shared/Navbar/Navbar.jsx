@@ -31,12 +31,12 @@ const Navbar = () => {
 
   return (
 
-    <nav className="navbar fixed top-0 z-10 justify-between px-20 bg-opacity-30 bg-black text-white font-bold">
+    <nav className="navbar fixed top-0 z-10 justify-between lg:px-20 px-5 bg-opacity-30 bg-black text-white font-bold">
     {/* // <nav className="navbar fixed top-0 z-10 justify-between px-20 bg-opacity-30 bg-black text-white font-bold"> */}
-      <div className="lg:flex  px-10 md:px-10">
+      <div className="lg:flex  md:gap-2 gap-36  items-center md:px-10 ">
         {/* Left side */}
-        <div className="flex items-center py-4 md:py-6">
-          <span className="text-xl font-semibold">Tr-Fashion</span>
+        <div className="flex items-center md:py-6">
+          <span className="text-lg md:text-xl  font-semibold">Tr-Fashion</span>
         </div>
         
         {/* Right side */}
