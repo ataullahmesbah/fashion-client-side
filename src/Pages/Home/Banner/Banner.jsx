@@ -46,7 +46,7 @@ const Banner = () => {
                                 <div data-aos="fade-up"
                                     data-aos-duration="3000" className="">
 
-                                    <button className="btn btn-sm mx-10 mt-5 btn-secondary font-mono text-white font-semibold">Meet Tr-Fashion</button>
+                                    <button className="btn btn-sm mx-10 lg:mt-5 btn-secondary font-mono text-white font-semibold">Meet Bengal</button>
 
                                 </div>
                             </div>

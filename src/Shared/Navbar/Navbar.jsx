@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className="lg:flex  md:gap-2 gap-36  items-center md:px-10 ">
         {/* Left side */}
         <div className="flex items-center md:py-6">
-          <span className="text-lg md:text-xl  font-semibold">Tr-Fashion</span>
+          <span className="text-lg md:text-xl  font-extrabold">Bengal</span>
         </div>
         
         {/* Right side */}

@@ -31,7 +31,7 @@ const Factory = () => {
           <h2
             data-aos="zoom-in"
             data-aos-duration="3000"
-            className="text-lime-400 font-bold text-xl "
+            className="text-lime-400 font-bold text-xl pt-10"
           >
             Produces
           </h2>
